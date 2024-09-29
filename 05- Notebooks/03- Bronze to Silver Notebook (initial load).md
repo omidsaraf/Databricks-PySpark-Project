@@ -38,7 +38,8 @@ df.write.format('delta').option('path','/mnt/strgdatabricks1/silver/Healthcare')
 ---check kind of table
 describe extended Healthcare.health_silver
 ````````
-![image](https://github.com/user-attachments/assets/b433858a-9306-48cd-bdc3-7a48576a73f6)
+![image](https://github.com/user-attachments/assets/725e7acb-ec42-489b-9199-6d9862876049)
+
 ```````python
 
 
