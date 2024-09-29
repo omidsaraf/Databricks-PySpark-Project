@@ -11,4 +11,4 @@ mount_adls("strgdatabricks1", "gold")
 
 ![image](https://github.com/user-attachments/assets/0f25029e-9ff2-4515-b94b-f8a1b56e2cb7)
 
-![image](https://github.com/user-attachments/assets/33f45d05-0634-40d8-bbfe-a2a36c81dcd2)
+
