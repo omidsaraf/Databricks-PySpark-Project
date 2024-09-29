@@ -38,6 +38,7 @@ This project involves managing and processing patient information from hospital 
    - Mount three containers via a defined function including AAD
    - Verify Mounted Storage on DBFS
 ![image](https://github.com/user-attachments/assets/81ab7a9e-e203-4386-b5ee-8b5dc92d1e0f)
+
  **Create Databases:**
    - Create a new database named `Healthcare_Silver` & `Healthcare_Gold` for organizing tables.
    - Refer to the [Create Databases Notebook](https://github.com/omidsaraf/Databricks-PySpark/blob/main/05-%20Notebooks/02-%20Create%20Databases.md) for detailed steps.
