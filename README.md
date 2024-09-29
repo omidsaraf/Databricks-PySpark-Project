@@ -106,24 +106,7 @@ This project involves managing and processing patient information from hospital 
 
 - Refer to the [Utility Notebook](https://github.com/omidsaraf/Databricks-PySpark/blob/main/05-%20Notebooks/01-%20Utility%20Notebook) for reusable functions and configurations used across different notebooks.
 
-### Additional Information
 
-For more details, refer to the [project repository](https://github.com/omidsaraf/Databricks-PySpark).
-
----
-
-Feel free to copy this into your GitHub repository. Let me know if there's anything else you need!
-
-Source: Conversation with Copilot, 29/09/2024
-(1) Best practices around bronze/silver/gold (medallio ... - Databricks. https://community.databricks.com/t5/data-engineering/best-practices-around-bronze-silver-gold-medallion-model-data/td-p/26044.
-(2) What is a Medallion Architecture? - Databricks. https://www.databricks.com/glossary/medallion-architecture.
-(3) Real-Time EDW Modeling with Databricks | Databricks Blog. https://www.databricks.com/blog/2022/11/07/load-edw-dimensional-model-real-time-databricks-lakehouse.html.
-(4) How to implement Slowly Changing Dimensions when y ... - Databricks. https://community.databricks.com/t5/technical-blog/how-to-implement-slowly-changing-dimensions-when-you-have/ba-p/43937.
-(5) Solved: Trigger one workflow after completion of another w ... - Databricks. https://community.databricks.com/t5/data-engineering/trigger-one-workflow-after-completion-of-another-workflow/td-p/65864.
-(6) Schedule and orchestrate Workflows | Databricks on AWS. https://docs.databricks.com/en/jobs/index.html.
-(7) Run jobs on a schedule or continuously | Databricks on AWS. https://docs.databricks.com/en/jobs/schedule-jobs.html.
-(8) Implement Spark Pipelines with Notebooks | Databricks Blog. https://www.databricks.com/blog/2016/08/30/notebook-workflows-the-easiest-way-to-implement-apache-spark-pipelines.html.
-(9) Gracefully stop a job based on condition - Databricks. https://community.databricks.com/t5/data-engineering/gracefully-stop-a-job-based-on-condition/td-p/37610.
 
 # Databricks-PySpark
 Health project
