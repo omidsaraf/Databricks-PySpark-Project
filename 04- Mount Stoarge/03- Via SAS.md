@@ -1,15 +1,5 @@
 ````python
 
-
-### Access Method:
-spark.conf.set("fs.azure.account.auth.type.<storage-account>.dfs.core.windows.net", "SAS")
-
-### Token Provider:
-spark.conf.set("fs.azure.sas.token.provider.type.<storage-account>.dfs.core.windows.net", "org.apache.hadoop.fs.azurebfs.sas.FixedSASTokenProvider")
-
-### abfss:
-spark.conf.set("fs.azure.sas.fixed.token.<storage-account>.dfs.core.windows.net", dbutils.secrets.get(scope="<scope>", key="<sas-token-key>"))
-
 storageAccountName = "storage-account"
 storageAccountAccessKey = <access-key>
 sasToken = <sas-token>
