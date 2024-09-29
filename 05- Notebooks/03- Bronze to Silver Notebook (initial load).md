@@ -27,3 +27,18 @@ df=df.withColumn('Date', to_date('DATE_PROVIDED', 'MM/dd/yyyy')).drop('DATE_PROV
 df.display()
 ````
 ![image](https://github.com/user-attachments/assets/eb6ec4b4-9d7c-4301-b6df-5715d0150dd8)
+
+
+`````python
+# External table + Write data into Silver
+#do not use overwrite
+df.write.format('delta').option('path','/mnt/strgdatabricks1/silver/Healthcare').saveAsTable('Healthcare_Silver.healthcare')
+
+%sql
+---check kind of table
+describe extended Healthcare.health_silver
+````````
+![image](https://github.com/user-attachments/assets/b433858a-9306-48cd-bdc3-7a48576a73f6)
+```````python
+
+
