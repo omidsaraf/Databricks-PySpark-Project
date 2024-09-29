@@ -29,7 +29,6 @@ This project involves managing and processing patient information from hospital 
    - Activate Databricks File System (DBFS)
    - Mount three containers via a defined function including AAD
    - Verify Mounted Storage on DBFS
-   - Refer to the [Utility Notebook](https://github.com/omidsaraf/Databricks-PySpark/blob/main/05-%20Notebooks/01-%20Utility%20Notebook) for reusable functions and configurations.
 
 2. **Create Databases:**
    - Create a new database named `healthcare` for organizing tables.
