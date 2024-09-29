@@ -37,7 +37,10 @@ This project involves managing and processing patient information from hospital 
    - Activate Databricks File System (DBFS)
    - Mount three containers via a defined function including AAD
    - Verify Mounted Storage on DBFS
+
 ![image](https://github.com/user-attachments/assets/81ab7a9e-e203-4386-b5ee-8b5dc92d1e0f)
+![image](https://github.com/user-attachments/assets/8d98f238-0f2e-4a0f-a687-e69c09539fc1)
+
 
  **Create Databases:**
    - Create a new database named `Healthcare_Silver` & `Healthcare_Gold` for organizing tables.
@@ -68,21 +71,22 @@ This project involves managing and processing patient information from hospital 
      - this notebook will be run daily with trigger and rund Incremental load notebooks.
 
 ### Phase 3: Detailed Workflow Execution
-1. **Master Notebook Execution:**
+ **Master Notebook Execution:**
    - The Master Notebook orchestrates the entire ETL pipeline.
    - It sequentially runs the dependent notebooks for each phase of the ETL process.
    - During each run, it ensures the following:
      - **Bronze to Silver (Incremental Load)**: Merges new data into the silver `health_data` table.
+         - **Task**: Incrementally load new data from the bronze folder into the silver `health_data` table.
+         - **Matching Criteria**: Match records based on the `status_update_id` column.
+         - **Transformation**: Add an `updated_timestamp` column with the current timestamp.
+         - **Mode**: Merge
      - **Silver to Gold (Overwrite Mode)**: Overwrites the gold layer tables with the latest aggregated and business-ready data.
-2. **Bronze to Silver (Incremental Load):**
-   - **Task**: Incrementally load new data from the bronze folder into the silver `health_data` table.
-   - **Matching Criteria**: Match records based on the `status_update_id` column.
-   - **Transformation**: Add an `updated_timestamp` column with the current timestamp.
-   - **Mode**: Merge
-3. **Silver to Gold (Overwrite Mode):**
-   - **Task**: Overwrite the gold layer tables with the latest data from the silver layer.
-   - **Transformation**: Perform necessary aggregations and calculations.
-   - **Mode**: Overwrite
+         - **Task**: Overwrite the gold layer tables with the latest data from the silver layer.
+         - **Transformation**: Perform necessary aggregations and calculations.
+         - **Mode**: Overwrite
+
+![image](https://github.com/user-attachments/assets/5dab6624-ed2e-49cf-8cb0-5e1784aa1c9e)
+
 **Schedule:**
 - The pipeline is scheduled to run daily at 5 PM.
 **Notes:**
