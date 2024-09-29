@@ -1,7 +1,6 @@
 
 # Databricks-PySpark 
 ### Health Project
----
 
 ### Project Overview
 
