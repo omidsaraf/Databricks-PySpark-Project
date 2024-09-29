@@ -17,12 +17,12 @@ Symptoms_Count_Day=df_S.groupBy('GENERAL_SYMPTOMS','DATE').agg(count('PATIENT_ID
 Symptoms_Count_Day.display()
 `````
 ![image](https://github.com/user-attachments/assets/b2adc572-36b1-4871-8305-43570f173ee9)
-`````
+`````python
 # Data Frame3
 Healthcare_visit_day=df_S.groupBy('HEALTHCARE_VISIT','DATE').agg(count('PATIENT_ID').alias('COUNT_Total_PATIENTS')).orderBy('DATE')
 `````
 ![image](https://github.com/user-attachments/assets/202e9ab1-c222-4d92-8ad2-84c5de38c1de)
-`````
+`````python
 # Create Gold delta tables
 
 Feeling_Count_Day.write.format('delta').mode('overwrite').option(
