@@ -32,7 +32,7 @@ df.display()
 `````python
 # External table + Write data into Silver
 #do not use overwrite
-df.write.format('delta').option('path','/mnt/strgdatabricks1/silver/Healthcare').saveAsTable('Healthcare.healthcare_Silver')
+df.write.format('delta').option('path','/mnt/strgdatabricks1/silver/Healthcare').saveAsTable('Healthcare_Silver.healthcare')
 
 %sql
 ---check kind of table
@@ -40,6 +40,5 @@ describe extended Healthcare.health_silver
 ````````
 ![image](https://github.com/user-attachments/assets/725e7acb-ec42-489b-9199-6d9862876049)
 
-```````python
-
+```````
 
