@@ -39,6 +39,8 @@ This project involves managing and processing patient information from hospital 
 
 3. ** Create Notebooks:**
    - Utility Notebook
+     - Refer to the [Utility Notebook](https://github.com/omidsaraf/Databricks-PySpark/blob/main/05-%20Notebooks/01-%20Utility%20Notebook) for reusable functions and configurations used across different notebooks.
+
    - Initial Data Load (Bronze to Silver):
      - Create a Dataframe to read CSV File
      - Create Schema
@@ -100,11 +102,6 @@ This project involves managing and processing patient information from hospital 
    - **Task**: Overwrite the gold layer tables with the latest data from the silver layer.
    - **Transformation**: Perform necessary aggregations and calculations.
    - **Mode**: Overwrite
-
-### Utility Functions
-
-- Refer to the [Utility Notebook](https://github.com/omidsaraf/Databricks-PySpark/blob/main/05-%20Notebooks/01-%20Utility%20Notebook) for reusable functions and configurations used across different notebooks.
-
 
 
 # Databricks-PySpark
