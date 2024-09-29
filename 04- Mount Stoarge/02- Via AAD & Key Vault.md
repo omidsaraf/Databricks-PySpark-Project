@@ -37,6 +37,10 @@ def mount_adls(Storage, Container):
     
 # Display number of mounts
     display(dbutils.fs.mounts())
+````
+
+![image](https://github.com/user-attachments/assets/6120f5d5-4590-4287-9ec9-6c6caf5d8b7b)
+
 #Mount Containers with Function
 mount_adls("strgdatabricks1", "bronze")
 mount_adls("strgdatabricks1", "silver")
