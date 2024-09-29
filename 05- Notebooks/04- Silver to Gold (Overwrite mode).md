@@ -2,7 +2,7 @@
 
 %run "./01- Utilities"
 
-df_S=spark.read.format('delta').load('/mnt/strgdatabricks1/health/silver/Healthcare')
+df_S=spark.read.format('delta').load('/mnt/strgdatabricks1/silver/Healthcare')
 df_S.display()
 
 # Data Frame1
@@ -26,15 +26,15 @@ Healthcare_visit_day=df_S.groupBy('HEALTHCARE_VISIT','DATE').agg(count('PATIENT_
 # Create Gold delta tables
 
 Feeling_Count_Day.write.format('delta').mode('overwrite').option(
-    'path', '/mnt/strgdatabricks1/health/gold/Feeling_Count_Day
+    'path', '/mnt/strgdatabricks1/gold/Feeling_Count_Day
 ).saveAsTable('Healthcare_Gold.Feeling_Count_Day,overwrite=True)
 
 Symptoms_Count_Day.write.format('delta').mode('overwrite').option(
-    'path', '/mnt/strgdatabricks1/health/gold/Symptoms_Count_Day'
+    'path', '/mnt/strgdatabricks1/gold/Symptoms_Count_Day'
 ).saveAsTable('Healthcare_Gold.Symptoms_Count_Day',overwrite=True)
 
 Healthcare_visit_day.write.format('delta').mode('overwrite').option(
-    'path', '/mnt/strgdatabricks1/health/gold/Healthcare_visit_day'
+    'path', '/mnt/strgdatabricks1/gold/Healthcare_visit_day'
 ).saveAsTable('Healthcare_Gold.Healthcare_visit_day',overwrite=True)
 
 dbutils.notebook.exit("Gold Processing Complete")
