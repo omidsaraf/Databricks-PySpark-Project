@@ -2,6 +2,10 @@
 # Databricks-PySpark 
 *Health Project*
 
+![image](https://github.com/user-attachments/assets/b694b6d8-eb7a-4836-9162-8fc21c4c6c6d)
+
+
+
 ### Project Overview
 
 This project involves managing and processing patient information from hospital visits. The data source is updated daily at 5 PM, retaining the same title and format but containing fresh data each time. Note that there is usually some overlap with the data between days.
@@ -67,10 +71,12 @@ This project involves managing and processing patient information from hospital 
      - Match records based on the `status_update_id` column.
      - Ensure newly updated or inserted records have an updated timestamp value.
      - Refer to the [Bronze to Silver (Incremental Load) Notebook](https://github.com/omidsaraf/Databricks-PySpark/blob/main/05-%20Notebooks/06-%20Bronze%20to%20Silver%20Notebook%20(incremental%20load).md)
-    - Master Notebook:
+![image](https://github.com/user-attachments/assets/1e380242-42a7-485d-9ee4-b88489df8f6b)
+
+   - Master Notebook:
      - this notebook will be run daily with trigger and rund Incremental load notebooks.
 
-### Phase 3: Detailed Workflow Execution
+### Phase 3: Workflow Execution
  **Master Notebook Execution:**
    - The Master Notebook orchestrates the entire ETL pipeline.
    - It sequentially runs the dependent notebooks for each phase of the ETL process.
@@ -86,6 +92,10 @@ This project involves managing and processing patient information from hospital 
          - **Mode**: Overwrite
 
 ![image](https://github.com/user-attachments/assets/5dab6624-ed2e-49cf-8cb0-5e1784aa1c9e)
+![image](https://github.com/user-attachments/assets/9b70e669-2d83-4352-a891-2fd6e7751486)
+![image](https://github.com/user-attachments/assets/4490f1f5-26ef-44cc-bb6a-9b632d6c4de3)
+![image](https://github.com/user-attachments/assets/01780a06-7fff-43f3-be40-2cf404114ffe)
+
 
 **Schedule:**
 - The pipeline is scheduled to run daily at 5 PM.
