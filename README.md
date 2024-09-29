@@ -19,5 +19,5 @@ End to end project
 #### Mount Storage
 - Activate Databrciks File System
 - Mount three containers via defined function including AAD
-- 
+- Check Mounted Storage on top of DBFS
 ![image](https://github.com/user-attachments/assets/81ab7a9e-e203-4386-b5ee-8b5dc92d1e0f)
