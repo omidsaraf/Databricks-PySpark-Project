@@ -2,8 +2,8 @@
 
 #### Scope: Storage account
 
-![image](https://github.com/user-attachments/assets/11884a08-6aff-42ef-ae6b-9bab31c0878e)
 ![image](https://github.com/user-attachments/assets/cf5692f6-76ba-4231-bd32-f028b0eece77)
+![image](https://github.com/user-attachments/assets/d6329468-4e5d-4691-a229-fc2953bf11ea)
 
 
 
