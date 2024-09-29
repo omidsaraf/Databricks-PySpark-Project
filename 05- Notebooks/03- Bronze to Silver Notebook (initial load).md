@@ -1,10 +1,11 @@
 ````python
 
-#Data Discovery
 
-path_B = 'dbfs:/mnt/strgdatabricks1/health/bronze/*.csv'
+%run "./01- Utility Note book"
+
+#Data Discovery
+path_B = 'dbfs:/mnt/strgdatabricks1/bronze/*.csv'
 #df = spark.read.csv(path1, header=True, inferSchema=True)
-#display(df)
 
 #define schema
 schema = StructType([
@@ -24,3 +25,5 @@ df=spark.read.csv(path_B, header=True, schema=schema)
 df=df.withColumn('Date', to_date('DATE_PROVIDED', 'MM/dd/yyyy')).drop('DATE_PROVIDED')\
     .withColumn('Updated_timestamp', current_timestamp())
 df.display()
+````
+![image](https://github.com/user-attachments/assets/eb6ec4b4-9d7c-4301-b6df-5715d0150dd8)
