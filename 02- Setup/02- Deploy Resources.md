@@ -1,6 +1,6 @@
 ### Create Resource Group under the Subcription
 
-#### Deploy:
+#### Deploy following Resources:
 - Azure Databricks (Premium Tier)
 - Data Lake Gen2 Account storage
 - Azure Key Vault to hold Secrets
