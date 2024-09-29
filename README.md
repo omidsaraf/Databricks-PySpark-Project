@@ -1,7 +1,10 @@
 
-# Databricks-PySpark Health Project
+# Databricks-PySpark 
+### Health Project
+---
 
 ### Project Overview
+
 
 This project involves managing and processing patient information from hospital visits. The data source is updated daily at 5 PM, retaining the same title and format but containing fresh data each time. Note that there is usually some overlap with the data between days.
 
@@ -31,30 +34,30 @@ This project involves managing and processing patient information from hospital 
    - Verify Mounted Storage on DBFS
 
 2. **Create Databases:**
-   - Create a new database named `healthcare` for organizing tables.
+   - Create a new database named `Healthcare_Silver` & `Healthcare_Gold` for organizing tables.
    - Refer to the [Create Databases Notebook](https://github.com/omidsaraf/Databricks-PySpark/blob/main/05-%20Notebooks/02-%20Create%20Databases.md) for detailed steps.
 
-3. **Initial Data Load (Bronze to Silver):**
-   - **Mount the 'health-updates' container to your DBFS.**
-   - **Process the 'health_status_updates.csv' file from the bronze folder into the silver folder and call it 'health_data' with an additional column called 'updated_timestamp' consisting of the current timestamp at which the data is inserted into the silver folder.**
-   - **Store 'health_data' in external Delta Lake format with the underlying data in the silver folder and the table itself as part of the 'healthcare' database.**
-   - **Ensure appropriate data types are assigned.**
-   - Refer to the [Bronze to Silver (Initial Load) Notebook](https://github.com/omidsaraf/Databricks-PySpark/blob/main/05-%20Notebooks/03-%20Bronze%20to%20Silver%20(initial%20load).md) for detailed steps.
-
-4. **Create Gold Layer Tables:**
-   - **Task**: Create tables in the gold layer as external Delta Lake format.
-   - **Database**: `healthcare`
-   - **Data Location**: Gold folder
-   - **Mode**: Overwrite
-   - Refer to the [Silver to Gold (Overwrite Mode) Notebook](https://github.com/omidsaraf/Databricks-PySpark/blob/main/05-%20Notebooks/04-%20Silver%20to%20Gold%20(Overwrite%20mode).md) for detailed steps.
-
-### Phase 3: Workflow Creation
-
-1. **Upsert Workflow:**
-   - **Task**: Upsert (via merge) data from the `health_status_updates.csv` file in the bronze folder into the silver `health_data` table.
-   - **Matching Criteria**: Match records based on the `status_update_id` column of both tables.
-   - **Task**: Ensure newly updated or inserted records have an updated timestamp value.
-   - Refer to the [Bronze to Silver (Incremental Load) Notebook](https://github.com/omidsaraf/Databricks-PySpark/blob/main/05-%20Notebooks/06-%20Bronze%20to%20Silver%20Notebook%20(incremental%20load).md) for detailed steps.
+3. ** Create Notebooks:**
+   - Utility Notebook
+   - Initial Data Load (Bronze to Silver):
+     - Create a Dataframe to read CSV File
+     - Create Schema
+     - Process, Transform and add `updated_timestamp` into the dataframe
+     - Write Dataframe in external Delta Lake format with the underlying data in the silver folder and the table itself
+     - Note: do not use overwrite mode
+     - Refer to the [Bronze to Silver (Initial Load) Notebook](https://github.com/omidsaraf/Databricks-PySpark/blob/main/05-%20Notebooks/03-%20Bronze%20to%20Silver%20(initial%20load).md)
+   - Silver to Gold:
+     - Create three Dataframes from file sitted in Silver Layer
+     - Create Schemas for them
+     - Process, Transform and add `updated_timestamp` into the dataframes.
+     - Write Dataframes in external Delta Lake format with the underlying data in the Gold folder and the tables
+     - Note: use overwrite mode
+     - Refer to the [Silver to Gold (Overwrite Mode) Notebook](https://github.com/omidsaraf/Databricks-PySpark/blob/main/05-%20Notebooks/04-%20Silver%20to%20Gold%20(Overwrite%20mode).md)    - Incremental Data Load (Bronze to Silver):
+     - Incrementally load new data from the bronze folder into the silver `health_data` table.
+     - Upsert (via merge) data from the `health_status_updates.csv` file in the bronze folder into the silver `health_data` table.
+     - Match records based on the `status_update_id` column.
+     - Ensure newly updated or inserted records have an updated timestamp value.
+     - Refer to the [Bronze to Silver (Incremental Load) Notebook](https://github.com/omidsaraf/Databricks-PySpark/blob/main/05-%20Notebooks/06-%20Bronze%20to%20Silver%20Notebook%20(incremental%20load).md)
 
 ### Phase 4: Daily Health Updates - ETL Pipeline
 
@@ -77,7 +80,6 @@ This project involves managing and processing patient information from hospital 
 
 **Notes:**
 - Overlapping data between days is expected and handled during the transformation step.
-- Refer to the [Master Notebook](https://github.com/omidsaraf/Databricks-PySpark/blob/main/05-%20Notebooks/07-%20Master%20Notebook.md) for orchestrating the entire ETL pipeline.
 
 ### Detailed Workflow Execution
 
@@ -93,13 +95,11 @@ This project involves managing and processing patient information from hospital 
    - **Matching Criteria**: Match records based on the `status_update_id` column.
    - **Transformation**: Add an `updated_timestamp` column with the current timestamp.
    - **Mode**: Merge
-   - Refer to the [Bronze to Silver (Incremental Load) Notebook](https://github.com/omidsaraf/Databricks-PySpark/blob/main/05-%20Notebooks/06-%20Bronze%20to%20Silver%20Notebook%20(incremental%20load).md) for detailed steps.
 
 3. **Silver to Gold (Overwrite Mode):**
    - **Task**: Overwrite the gold layer tables with the latest data from the silver layer.
    - **Transformation**: Perform necessary aggregations and calculations.
    - **Mode**: Overwrite
-   - Refer to the [Silver to Gold (Overwrite Mode) Notebook](https://github.com/omidsaraf/Databricks-PySpark/blob/main/05-%20Notebooks/04-%20Silver%20to%20Gold%20(Overwrite%20mode).md) for detailed steps.
 
 ### Utility Functions
 
@@ -160,23 +160,5 @@ This ETL pipeline is designed to run daily at 5 PM. It replaces the existing hea
 - Overlapping data between days is expected and handled during the transformation step.
 
 
-
-
-### Requirements
-- Create Resource Group and following resources:
-    - Databricks Workspace (Premium Tier)
-    - Data Lake Gen2 Stoarge Account
-    - Key Vault
-    - Create Policy, Pool and Cluster for Computation Solution
-#### Access Control
-- Service Principal (AAD) - Method 1
-- SAS Token - Method 2
-- Sceret Scope in Databricks
-- Key Vault o keep all secrets
-- Role Based Access Control (Storage and Key Vault)
-#### Mount Storage
-- Activate Databrciks File System
-- Mount three containers via defined function including AAD
-- Check Mounted Storage on top of DBFS
   
 ![image](https://github.com/user-attachments/assets/81ab7a9e-e203-4386-b5ee-8b5dc92d1e0f)
