@@ -9,4 +9,5 @@ Scope: Storage Account
 
 Scope: Container
 ![image](https://github.com/user-attachments/assets/270db845-6305-4be7-988b-ee528f324a63)
-![image](https://github.com/user-attachments/assets/ffc781a8-c8a9-4d01-928d-6128eb824c4f)
+![image](https://github.com/user-attachments/assets/e6eb5f4b-aa4c-4909-964e-30269fc00206)
+
