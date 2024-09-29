@@ -1,6 +1,7 @@
 ````python
 %run "./01- Utilities"
 
+#Read new file
 path_B = 'dbfs:/mnt/strgdatabricks1/health/bronze/*.csv'
 #df = spark.read.csv(path1, header=True, inferSchema=True)
 #display(df)
