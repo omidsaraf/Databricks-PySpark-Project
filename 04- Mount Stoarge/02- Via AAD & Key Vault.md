@@ -1,6 +1,6 @@
 
 
-````
+````PySpark
 def mount_adls(Storage, Container):
 # Apply Key Vault for secrets
     Client_secret = dbutils.secrets.get(
