@@ -5,15 +5,15 @@ def mount_adls(Storage, Container):
 # Apply Key Vault for secrets
     Client_secret = dbutils.secrets.get(
         scope="Customers-scope", 
-        key="KV-ServicePricipalCustomers-ClientSecret"
+        key="KV-ServicePricipal-ClientSecret"
     )
     Client_ID = dbutils.secrets.get(
         scope="Customers-scope", 
-        key="KV-ServicePricipalCustomers-ClientID"
+        key="KV-ServicePricipal-ClientID"
     )
     Tenant_ID = dbutils.secrets.get(
         scope="Customers-scope", 
-        key="KV-ServicePricipalCustomers-TenantID"
+        key="KV-ServicePricipal-TenantID"
     )
     
 # Set Configurations for mounting    
