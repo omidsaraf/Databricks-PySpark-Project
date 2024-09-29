@@ -26,7 +26,8 @@ df=df.withColumn('Date', to_date('DATE_PROVIDED', 'MM/dd/yyyy')).drop('DATE_PROV
     .withColumn('Updated_timestamp', current_timestamp())
 df.display()
 ````
-![image](https://github.com/user-attachments/assets/eb6ec4b4-9d7c-4301-b6df-5715d0150dd8)
+![image](https://github.com/user-attachments/assets/5f339e25-ffd6-4575-a59c-600b761aee54)
+
 
 
 `````python
@@ -38,7 +39,7 @@ df.write.format('delta').option('path','/mnt/strgdatabricks1/silver/Healthcare')
 ---check kind of table
 describe extended Healthcare.health_silver
 ````````
-![image](https://github.com/user-attachments/assets/725e7acb-ec42-489b-9199-6d9862876049)
+![image](https://github.com/user-attachments/assets/58dba3ae-6ab4-4f33-8c21-e84251376399)
 
 ```````
 
