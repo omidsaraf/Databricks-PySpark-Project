@@ -10,5 +10,7 @@
 
 #### Collectect Information about the following to keep them as secrects in Azure Key Vault:
 1- Client Secret
+
 2- Client ID
+
 3- Tenant ID
