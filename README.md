@@ -2,7 +2,7 @@
 # Databricks-PySpark 
 *Health Project*
 
-![image](https://github.com/user-attachments/assets/5333e373-4e0f-4e15-8516-6e9e6691d24f)
+![image](https://github.com/user-attachments/assets/08bd3735-6720-4e14-9fb4-acdb9cde46a9)
 
 
 ### Project Overview
