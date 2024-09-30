@@ -97,7 +97,7 @@ This project involves managing and processing patient information from hospital 
 ![image](https://github.com/user-attachments/assets/36f59771-3f5b-4574-938f-7774d3c0877d)
 
 
-### Solution2: Delta Live Tables (pipeline)
+### Phase 4: Delta Live Tables (pipeline)
 
 1- Create a notebook includes:
 - Reading Dataframe for bronze Layer and use Delta Table method
