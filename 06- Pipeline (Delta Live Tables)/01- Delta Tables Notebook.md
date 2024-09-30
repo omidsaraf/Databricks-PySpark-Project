@@ -95,7 +95,7 @@ def health_silver():
 ### Gold Tables
 ````python
 @dlt.table
-def health_gold_Feeling_Count_Day():
+def health_gold_feeling():
     return (
         dlt.read('health_silver')
         .groupBy('FEELING_TODAY', 'Date')
@@ -104,7 +104,7 @@ def health_gold_Feeling_Count_Day():
     )
 
 @dlt.table
-def health_gold_Symptoms_Count_Day():
+def health_gold_Symptoms():
     return (
         dlt.read('health_silver')
         .groupBy('GENERAL_SYMPTOMS', 'Date')
@@ -113,7 +113,7 @@ def health_gold_Symptoms_Count_Day():
     )
 
 @dlt.table
-def health_gold_Healthcare_visit_day():
+def health_gold_visit():
     return (
         dlt.read('health_silver')
         .groupBy('HEALTHCARE_VISIT', 'Date')
