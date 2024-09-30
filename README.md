@@ -43,7 +43,7 @@ This project involves managing and processing patient information from hospital 
    - Verify Mounted Storage on DBFS
 
 ![image](https://github.com/user-attachments/assets/81ab7a9e-e203-4386-b5ee-8b5dc92d1e0f)
-![image](https://github.com/user-attachments/assets/8d98f238-0f2e-4a0f-a687-e69c09539fc1)
+![image](https://github.com/user-attachments/assets/e4c3a201-2678-49e2-8d99-51a658ea94b9)
 
 
  **Create Databases:**
