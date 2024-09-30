@@ -110,7 +110,7 @@ This project involves managing and processing patient information from hospital 
 - Create Silver Delta Table from Bronze Delta Table, applying Incremental method with Merge
 - Create three Gold Delta Tables from Silver Table
 
-- Refer to the (https://github.com/omidsaraf/Databricks-PySpark-Project/blob/main/06-%20Pipeline%20(Delta%20Live%20Tables)/01-%20Delta%20Tables%20Notebook.md)
+- Refer to the [Delta Tables Notebook](https://github.com/omidsaraf/Databricks-PySpark-Project/blob/main/06-%20Pipeline%20(Delta%20Live%20Tables)/01-%20Delta%20Tables%20Notebook.md)
 
 
 2- Create Pipeline and connect Notebook
