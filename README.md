@@ -44,7 +44,7 @@ This project involves managing and processing patient information from hospital 
 
 ![image](https://github.com/user-attachments/assets/fd06453e-a453-4641-b196-aa024e1d6fdc)
 
-![image](https://github.com/user-attachments/assets/e4c3a201-2678-49e2-8d99-51a658ea94b9)
+![image](https://github.com/user-attachments/assets/0a2a14fe-666e-4038-9de5-eb74372d0210)
 
 
  **Create Databases:**
