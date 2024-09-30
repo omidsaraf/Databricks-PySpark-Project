@@ -71,8 +71,6 @@ This project involves managing and processing patient information from hospital 
      - Match records based on the `status_update_id` column.
      - Ensure newly updated or inserted records have an updated timestamp value.
      - Refer to the [Bronze to Silver (Incremental Load) Notebook](https://github.com/omidsaraf/Databricks-PySpark/blob/main/05-%20Notebooks/06-%20Bronze%20to%20Silver%20Notebook%20(incremental%20load).md)
-![image](https://github.com/user-attachments/assets/891d7877-2a10-4d67-8dba-844cfd37d1c7)
-
 
    - Master Notebook:
      - this notebook will be run daily with trigger and rund Incremental load notebooks.
