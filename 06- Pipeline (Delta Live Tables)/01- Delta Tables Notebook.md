@@ -1,11 +1,13 @@
+### Import necessary libraries
 ````python
-
-# Import necessary libraries
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
 import dlt
 from delta.tables import DeltaTable
+`````
 
+### Create Dataframe
+````python
 # Data Discovery
 path_B = 'dbfs:/mnt/strgdatabricks1/bronze/*.csv'
 
@@ -27,13 +29,15 @@ df = spark.read.csv(path_B, header=True, schema=schema_health)
 df = df.withColumn('Date', to_date('DATE_PROVIDED', 'MM/dd/yyyy')).drop('DATE_PROVIDED')\
     .withColumn('Updated_timestamp', current_timestamp())
 df.display()
-
-# Bronze Table
+`````
+### Bronze Table
+````python
 @dlt.table
 def health_bronze():
     return spark.read.format("csv").option("header", "true").schema(schema_health).load(path_B)
-
-# Silver Table
+````
+### Silver Table
+````python
 @dlt.table
 def health_silver():
     # Read from the Bronze table
@@ -87,8 +91,9 @@ def health_silver():
         .execute()
     
     return silver_df
-
-# Gold Tables
+`````
+### Gold Tables
+````python
 @dlt.table
 def health_gold_Feeling_Count_Day():
     return (
