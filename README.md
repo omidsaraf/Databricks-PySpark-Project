@@ -77,7 +77,26 @@ This project involves managing and processing patient information from hospital 
      - this notebook will be run daily with trigger and rund Incremental load notebooks.
 
 ### Phase 3: Workflow
- **Master Notebook:**
+
+#### *via Delta Live Tables (pipeline)*
+
+1- Create a notebook includes:
+- Reading Dataframe for bronze Layer and use Delta Table method
+- Create Silver Delta Table from Bronze Delta Table, applying Incremental method with Merge
+- Create three Gold Delta Tables from Silver Table
+
+- Refer to the [Delta Tables Notebook](https://github.com/omidsaraf/Databricks-PySpark-Project/blob/main/06-%20Pipeline%20(Delta%20Live%20Tables)/01-%20Delta%20Tables%20Notebook.md)
+
+
+2- Create Pipeline and connect Notebook
+
+3- Run The pipeline is scheduled to run daily at 5 PM.
+
+![image](https://github.com/user-attachments/assets/05df8912-859e-4dd1-bfe8-ddb69f65cdf0)
+![image](https://github.com/user-attachments/assets/de8946f2-d7c9-404b-a29e-2209c3a59b97)
+
+
+#### *via Master Notebook:*
    - The Master Notebook orchestrates the entire ETL pipeline.
    - It sequentially runs the dependent notebooks for each phase of the ETL process.
    - During each run, it ensures the following:
@@ -94,24 +113,6 @@ This project involves managing and processing patient information from hospital 
          - The pipeline is scheduled to run daily at 5 PM.
       
 ![image](https://github.com/user-attachments/assets/1ebcf862-67e1-4323-bf0c-3f624035d543)
-![image](https://github.com/user-attachments/assets/36f59771-3f5b-4574-938f-7774d3c0877d)
 
-
-### Phase 4: Delta Live Tables (pipeline)
-
-1- Create a notebook includes:
-- Reading Dataframe for bronze Layer and use Delta Table method
-- Create Silver Delta Table from Bronze Delta Table, applying Incremental method with Merge
-- Create three Gold Delta Tables from Silver Table
-
-- Refer to the [Delta Tables Notebook](https://github.com/omidsaraf/Databricks-PySpark-Project/blob/main/06-%20Pipeline%20(Delta%20Live%20Tables)/01-%20Delta%20Tables%20Notebook.md)
-
-
-2- Create Pipeline and connect Notebook
-
-3- Run The pipeline is scheduled to run daily at 5 PM.
-
-![image](https://github.com/user-attachments/assets/05df8912-859e-4dd1-bfe8-ddb69f65cdf0)
-![image](https://github.com/user-attachments/assets/de8946f2-d7c9-404b-a29e-2209c3a59b97)
 
 
