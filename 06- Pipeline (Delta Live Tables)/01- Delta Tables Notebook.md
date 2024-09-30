@@ -1,4 +1,4 @@
-```python
+````python
 
 # Import necessary libraries
 from pyspark.sql.functions import *
@@ -36,53 +36,57 @@ def health_bronze():
 # Silver Table
 @dlt.table
 def health_silver():
-    return (
-        dlt.read('health_bronze')
-        .withColumn('Date', to_date('DATE_PROVIDED', 'MM/dd/yyyy')).drop('DATE_PROVIDED')
-        .withColumn('Updated_timestamp', current_timestamp())
-    )
-
-# Assuming df is the DataFrame you want to merge with the Delta table
-df = health_silver()
-
-deltaTable = DeltaTable.forPath(spark, '/mnt/strgdatabricks1/health/silver/Healthcare')
-
-deltaTable.alias('T')\
-    .merge(
-        df.alias('S'), 
-        'T.STATUS_UPDATE_ID = S.STATUS_UPDATE_ID'
-    )\
-    .whenMatchedUpdate(
-        set={
-            'STATUS_UPDATE_ID': 'S.STATUS_UPDATE_ID',
-            'PATIENT_ID': 'S.PATIENT_ID',
-            'Date': 'S.Date',
-            'FEELING_TODAY': 'S.FEELING_TODAY',
-            'IMPACT': 'S.IMPACT',
-            'INJECTION_SITE_SYMPTOMS': 'S.INJECTION_SITE_SYMPTOMS',
-            'HIGHEST_TEMP': 'S.HIGHEST_TEMP',
-            'FEVERISH_TODAY': 'S.FEVERISH_TODAY',
-            'GENERAL_SYMPTOMS': 'S.GENERAL_SYMPTOMS',
-            'HEALTHCARE_VISIT': 'S.HEALTHCARE_VISIT',
-            'Updated_timestamp': current_timestamp()
-        }
-    )\
-    .whenNotMatchedInsert(
-        values={
-            'STATUS_UPDATE_ID': 'S.STATUS_UPDATE_ID',
-            'PATIENT_ID': 'S.PATIENT_ID',
-            'Date': 'S.Date',
-            'FEELING_TODAY': 'S.FEELING_TODAY',
-            'IMPACT': 'S.IMPACT',
-            'INJECTION_SITE_SYMPTOMS': 'S.INJECTION_SITE_SYMPTOMS',
-            'HIGHEST_TEMP': 'S.HIGHEST_TEMP',
-            'FEVERISH_TODAY': 'S.FEVERISH_TODAY',
-            'GENERAL_SYMPTOMS': 'S.GENERAL_SYMPTOMS',
-            'HEALTHCARE_VISIT': 'S.HEALTHCARE_VISIT',
-            'Updated_timestamp': current_timestamp()
-        }
-    )\
-    .execute()
+    # Read from the Bronze table
+    bronze_df = dlt.read('health_bronze')
+    
+    # Transform the data
+    silver_df = bronze_df.withColumn('Date', to_date('DATE_PROVIDED', 'MM/dd/yyyy')).drop('DATE_PROVIDED')\
+                         .withColumn('Updated_timestamp', current_timestamp())
+    
+    # Define the path for the Silver table
+    silver_table_path = '/mnt/strgdatabricks1/health/silver/Healthcare'
+    
+    # Create or merge with the existing Silver table
+    deltaTable = DeltaTable.forPath(spark, silver_table_path)
+    
+    deltaTable.alias('T')\
+        .merge(
+            silver_df.alias('S'), 
+            'T.STATUS_UPDATE_ID = S.STATUS_UPDATE_ID'
+        )\
+        .whenMatchedUpdate(
+            set={
+                'STATUS_UPDATE_ID': 'S.STATUS_UPDATE_ID',
+                'PATIENT_ID': 'S.PATIENT_ID',
+                'Date': 'S.Date',
+                'FEELING_TODAY': 'S.FEELING_TODAY',
+                'IMPACT': 'S.IMPACT',
+                'INJECTION_SITE_SYMPTOMS': 'S.INJECTION_SITE_SYMPTOMS',
+                'HIGHEST_TEMP': 'S.HIGHEST_TEMP',
+                'FEVERISH_TODAY': 'S.FEVERISH_TODAY',
+                'GENERAL_SYMPTOMS': 'S.GENERAL_SYMPTOMS',
+                'HEALTHCARE_VISIT': 'S.HEALTHCARE_VISIT',
+                'Updated_timestamp': current_timestamp()
+            }
+        )\
+        .whenNotMatchedInsert(
+            values={
+                'STATUS_UPDATE_ID': 'S.STATUS_UPDATE_ID',
+                'PATIENT_ID': 'S.PATIENT_ID',
+                'Date': 'S.Date',
+                'FEELING_TODAY': 'S.FEELING_TODAY',
+                'IMPACT': 'S.IMPACT',
+                'INJECTION_SITE_SYMPTOMS': 'S.INJECTION_SITE_SYMPTOMS',
+                'HIGHEST_TEMP': 'S.HIGHEST_TEMP',
+                'FEVERISH_TODAY': 'S.FEVERISH_TODAY',
+                'GENERAL_SYMPTOMS': 'S.GENERAL_SYMPTOMS',
+                'HEALTHCARE_VISIT': 'S.HEALTHCARE_VISIT',
+                'Updated_timestamp': current_timestamp()
+            }
+        )\
+        .execute()
+    
+    return silver_df
 
 # Gold Tables
 @dlt.table
