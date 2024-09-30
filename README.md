@@ -104,11 +104,17 @@ This project involves managing and processing patient information from hospital 
 - Overlapping data between days is expected and handled during the transformation step.
 
 ### Solution2: Delta Live Tables (pipeline)
+
 1- Create a notebook includes:
 - Reading Dataframe for bronze Layer and use Delta Table method
 - Create Silver Delta Table from Bronze Delta Table, applying Incremental method with Merge
 - Create three Gold Delta Tables from Silver Table
+
+- Refer to the (https://github.com/omidsaraf/Databricks-PySpark-Project/blob/main/06-%20Pipeline%20(Delta%20Live%20Tables)/01-%20Delta%20Tables%20Notebook.md)
+
+
 2- Create Pipeline and connect Notebook
+
 3- Run The pipeline is scheduled to run daily at 5 PM.
 
 ![image](https://github.com/user-attachments/assets/05df8912-859e-4dd1-bfe8-ddb69f65cdf0)
