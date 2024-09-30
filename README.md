@@ -78,7 +78,7 @@ This project involves managing and processing patient information from hospital 
 
 ### Phase 3: Workflow
 
-#### *via Delta Live Tables (pipeline)*
+#### **via Delta Live Tables (pipeline)**
 
 1- Create a notebook includes:
 - Reading Dataframe for bronze Layer and use Delta Table method
@@ -93,10 +93,9 @@ This project involves managing and processing patient information from hospital 
 3- Run The pipeline is scheduled to run daily at 5 PM.
 
 ![image](https://github.com/user-attachments/assets/05df8912-859e-4dd1-bfe8-ddb69f65cdf0)
-![image](https://github.com/user-attachments/assets/de8946f2-d7c9-404b-a29e-2209c3a59b97)
+![image](https://github.com/user-attachments/assets/3ba7eed4-57f7-4a16-b1dc-09e65c2ff30b)
 
-
-#### *via Master Notebook:*
+#### **via Master Notebook:**
    - The Master Notebook orchestrates the entire ETL pipeline.
    - It sequentially runs the dependent notebooks for each phase of the ETL process.
    - During each run, it ensures the following:
