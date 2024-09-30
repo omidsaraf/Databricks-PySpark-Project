@@ -104,7 +104,7 @@ def health_gold_feeling():
     )
 
 @dlt.table
-def health_gold_Symptoms():
+def health_gold_symptoms():
     return (
         dlt.read('health_silver')
         .groupBy('GENERAL_SYMPTOMS', 'Date')
