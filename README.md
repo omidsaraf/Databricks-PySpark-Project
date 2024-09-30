@@ -90,19 +90,12 @@ This project involves managing and processing patient information from hospital 
          - **Task**: Overwrite the gold layer tables with the latest data from the silver layer.
          - **Transformation**: Perform necessary aggregations and calculations.
          - **Mode**: Overwrite
-
+     - **Schedule:**
+         - The pipeline is scheduled to run daily at 5 PM.
+      
 ![image](https://github.com/user-attachments/assets/1ebcf862-67e1-4323-bf0c-3f624035d543)
+![image](https://github.com/user-attachments/assets/36f59771-3f5b-4574-938f-7774d3c0877d)
 
-![image](https://github.com/user-attachments/assets/9b70e669-2d83-4352-a891-2fd6e7751486)
-![image](https://github.com/user-attachments/assets/4490f1f5-26ef-44cc-bb6a-9b632d6c4de3)
-![image](https://github.com/user-attachments/assets/01780a06-7fff-43f3-be40-2cf404114ffe)
-
-
-**Schedule:**
-- The pipeline is scheduled to run daily at 5 PM.
-
-**Notes:**
-- Overlapping data between days is expected and handled during the transformation step.
 
 ### Solution2: Delta Live Tables (pipeline)
 
