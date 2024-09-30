@@ -2,8 +2,6 @@
 
 ![image](https://github.com/user-attachments/assets/9da6674b-438f-4c00-b748-f8fbc173e444)
 
-![image](https://github.com/user-attachments/assets/dad6a6a4-dbd0-4f6c-b017-26493942196f)
-
 ![image](https://github.com/user-attachments/assets/e71985c7-e00a-4526-8afd-a15892d945e9)
 
 ![image](https://github.com/user-attachments/assets/0e75fbb2-a554-4733-86ea-bd0d428f03a3)
