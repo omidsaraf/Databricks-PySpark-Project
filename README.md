@@ -119,4 +119,6 @@ This project involves managing and processing patient information from hospital 
 3- Run The pipeline is scheduled to run daily at 5 PM.
 
 ![image](https://github.com/user-attachments/assets/05df8912-859e-4dd1-bfe8-ddb69f65cdf0)
+![image](https://github.com/user-attachments/assets/de8946f2-d7c9-404b-a29e-2209c3a59b97)
+
 
