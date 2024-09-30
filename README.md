@@ -91,7 +91,8 @@ This project involves managing and processing patient information from hospital 
          - **Transformation**: Perform necessary aggregations and calculations.
          - **Mode**: Overwrite
 
-![image](https://github.com/user-attachments/assets/5dab6624-ed2e-49cf-8cb0-5e1784aa1c9e)
+![image](https://github.com/user-attachments/assets/1ebcf862-67e1-4323-bf0c-3f624035d543)
+
 ![image](https://github.com/user-attachments/assets/9b70e669-2d83-4352-a891-2fd6e7751486)
 ![image](https://github.com/user-attachments/assets/4490f1f5-26ef-44cc-bb6a-9b632d6c4de3)
 ![image](https://github.com/user-attachments/assets/01780a06-7fff-43f3-be40-2cf404114ffe)
