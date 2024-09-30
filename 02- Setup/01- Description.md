@@ -1,4 +1,5 @@
 Azure Setup:
+
     -Resource Group
     -Databricks Workspace (Premium Tier)
     -Data Lake Gen2 Storage Account
@@ -10,4 +11,5 @@ Azure Setup:
     -Role-Based Access Control (Storage and Key Vault) 
     
 Databricks Configuration:
+
     -Create Policy, Pool, and Cluster for Computation Solution
