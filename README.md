@@ -76,8 +76,8 @@ This project involves managing and processing patient information from hospital 
    - Master Notebook:
      - this notebook will be run daily with trigger and rund Incremental load notebooks.
 
-### Phase 3: Workflow Execution
- **Master Notebook Execution:**
+### Phase 3: Workflow
+ **Master Notebook:**
    - The Master Notebook orchestrates the entire ETL pipeline.
    - It sequentially runs the dependent notebooks for each phase of the ETL process.
    - During each run, it ensures the following:
