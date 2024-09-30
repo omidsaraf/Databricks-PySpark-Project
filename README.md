@@ -13,9 +13,11 @@ This project involves managing and processing patient information from hospital 
  **Extract:**
    - Fetch the new health updates file from the source.
    - Ensure the file format and title are consistent with the previous day's file.
+
  **Transform:**
    - Process the new data to handle any overlaps with the previous day's data.
    - Clean and format the data as required.
+
  **Load:**
    - Replace the old file in the bronze folder with the new file.
    - Ensure the new file is correctly loaded and accessible for further processing.
