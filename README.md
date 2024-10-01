@@ -9,16 +9,12 @@
 
 This project involves managing and processing patient information from hospital visits. The data source is updated daily at 5 PM, retaining the same title and format but containing fresh data each time. Note that there is usually some overlap with the data between days.
 
-#### Daily Health Updates - ETL Pipeline
- **Extract:**
+#### Daily Health Updates
+
    - Fetch the new health updates file from the source.
    - Ensure the file format and title are consistent with the previous day's file.
-
- **Transform:**
    - Process the new data to handle any overlaps with the previous day's data.
    - Clean and format the data as required.
-
- **Load:**
    - Replace the old file in the bronze folder with the new file.
    - Ensure the new file is correctly loaded and accessible for further processing.
 
