@@ -4,7 +4,6 @@
 
 ![image](https://github.com/user-attachments/assets/08bd3735-6720-4e14-9fb4-acdb9cde46a9)
 
-
 ### Project Overview
 
 This project involves managing and processing patient information from hospital visits. The data source is updated daily at 5 PM, retaining the same title and format but containing fresh data each time. Note that there is usually some overlap with the data between days.
@@ -112,6 +111,10 @@ This project involves managing and processing patient information from hospital 
          - The pipeline is scheduled to run daily at 5 PM.
       
 ![image](https://github.com/user-attachments/assets/1ebcf862-67e1-4323-bf0c-3f624035d543)
+
+#### **Power BI (Visualisation)**
+
+![image](https://github.com/user-attachments/assets/2281f584-af01-475d-9871-f092cc520082)
 
 
 
